@@ -1,0 +1,217 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{hhline}
+\usepackage{lipsum}
+\usepackage[pdftex,dvipsnames,table]{xcolor}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+
+% ToDo package and config
+\usepackage{xargs}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\mytodo}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\usepackage{marginnote}
+\renewcommand{\marginpar}{\marginnote}
+
+% VU colors
+\definecolor{vu-black}{HTML}{000000}
+\definecolor{vu-white}{HTML}{ffffff}
+\definecolor{vu-grey-80}{HTML}{333333}
+\definecolor{vu-grey-50}{HTML}{e1e1e1}
+\definecolor{vu-blue}{HTML}{007ab9}
+
+% vars
+\newcommand{\arraystrechlength}{1.5}
+
+\begin{document}
+
+%title
+\begin{center}
+\vspace{1mm}
+\includegraphics[height=18mm]{figs/VUlogo.png}
+% \includegraphics[height=18mm]{figs/logocustomer.png}
+
+\vspace*{1.5cm}
+
+\rule{.9\linewidth}{.6pt}\\[0.4cm]
+{\huge \bfseries SOD Assignment \par}
+{\huge \bfseries \textit{Title}\par}\vspace{0.4cm}
+\rule{.9\linewidth}{.6pt}\\[1.5cm]
+
+\vspace*{2mm}
+
+{\Large
+\begin{tabular}{l}
+{\bf Service Oriented Design 20XX} \\\\
+{\bf Group:} ~~XX ~~~~ \\
+{\bf Member names:} (Student1, Student2)\\
+{\bf Emails:} (e-mail@student1, e-mail@student2)\\
+{\bf VUnetIDs:} (ID1, ID2)\\
+{\bf Master program and Track:} Computer Science - SEG\\
+\end{tabular}
+}
+
+
+\vspace*{3cm}
+
+\today\\[4cm] % Date
+
+\end{center}
+
+\tableofcontents
+\thispagestyle{empty}
+\pagenumbering{arabic}
+\clearpage
+
+% Change Log
+\section*{Change Log}
+\begin{table}[h]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+    \begin{tabular}{ | m{50pt} | m{80pt} | m{120pt} | m{120pt} | }
+    
+    \hline
+    \rowcolor{vu-blue}
+    \textcolor{vu-white}{\textbf{Number}} &
+    \textcolor{vu-white}{\textbf{Name}} &
+    \textcolor{vu-white}{\textbf{Feedback}} &
+    \textcolor{vu-white}{\textbf{Description}} \\ \hline
+    
+    1. &
+    MyChange &
+    This was the feedback. &
+    I changed this and this. \\ \hline
+    
+    \end{tabular}
+}
+\end{table}
+\thispagestyle{empty}
+\clearpage
+
+% Section 1
+\section{ToDos and Remarks}
+You can add to-dos and remarks to your document through the command \texttt{\textbackslash mytodo\{\}}.
+If you want to redefine or edit the command, you can do this by changing the definition at the document preamble: \texttt{\textbackslash newcommandx\{\textbackslash mytodo\}}
+
+\subsection{Example Paragraph}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \mytodo{I should write here real text.} Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\subsection{Example Table}
+\begin{table}[h]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+    \begin{tabular}{ | >{\columncolor{vu-grey-50}}m{100pt} | m{230pt} | }
+    
+    \hline
+    \rowcolor{vu-blue}
+    \textcolor{vu-white}{\textbf{Headline 1}} & \textcolor{vu-white}{\textbf{Headline 2}} \\ \hline
+    
+    Example &
+    \makecell*[l]{
+        \mytodo{I should change this to real text.}Please note the \% at the end of the line!%
+    }
+    
+    \\ \hline
+    
+    Example &
+    Lorem ipsum
+    \\ \hline
+    
+    \end{tabular}
+}
+\end{table}
+
+
+\clearpage
+\section{Tables}
+All tables are colored by the VU corporate identity colors. See preamble section \texttt{VU colors}.
+
+\subsection{Example \#1}
+\begin{table}[h]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+    \begin{tabular}{ | >{\columncolor{vu-grey-50}}m{100pt} | m{230pt} | }
+    
+    \hline
+    \rowcolor{vu-blue}
+    \textcolor{vu-white}{\textbf{Headline 1}} & \textcolor{vu-white}{\textbf{Headline 2}} \\ \hline
+    
+    Example &
+    My cell example
+    \\ \hline
+    
+    Example &
+    Lorem ipsum
+    \\ \hline
+    
+    \end{tabular}
+}
+\end{table}
+
+
+\subsection{Example \#2}
+\begin{table}[h]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+    \begin{tabular}{ | >{\columncolor{vu-blue}\color{vu-white}}m{100pt} | m{230pt} | }
+    \hline
+    
+    \textbf{Example} &
+    Lorem ipsum
+    \\ \hline
+    
+    \textbf{Example} &
+    Lorem ipsum
+    \\ \hline
+    
+    \textbf{Example} &
+    Lorem ipsum
+    \\ \hline
+    
+    \end{tabular}
+}
+\end{table}
+
+
+\subsection{Example \#3}
+\begin{table}[h]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+\begin{tabular}{ | >{\columncolor{vu-blue}\color{vu-white}}m{70pt} | >{\columncolor{vu-grey-50}}m{330pt} | } 
+\hline
+Example                  & \textbf{Con\#1}: Example \\ 
+\hline
+Example         & \makecell*[l]{\textbf{Cr\#1}: Example \\ \textbf{Cr\#2}: Example}  \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsection{Example \#4}
+\begin{table}[H]
+{\renewcommand{\arraystretch}{\arraystrechlength}
+\begin{tabular}{ | >{\columncolor{vu-blue}\color{vu-white}}m{70pt} | >{\columncolor{vu-grey-50}}m{80pt} | p{238pt} | } 
+\hline
+Option 1                  & Example & \textbf{Example}: Lorem Ipsum  \\ 
+\hline
+                          & Example   & Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gu                   \\ 
+\hline
+                          & Example  & Example.                        \\ 
+\hline
+                          & Example  & \makecell*[{{p{238pt}}}]{
+                          Lorem \\ \\
+                          Ipsum
+                          }\\ 
+
+\hline
+\end{tabular}
+}
+\end{table}
+
+\end{document}
