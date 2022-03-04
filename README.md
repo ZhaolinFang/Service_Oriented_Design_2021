@@ -1,2 +1,2 @@
 # SOD-2021
-This is one of my course assginment of Service Oriented Design.
+*This is the assignment of one of my Master program called Service Oriented Design.*
